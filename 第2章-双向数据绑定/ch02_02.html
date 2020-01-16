@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>ch02_02</title>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+<div>用户名：<input type="text" ng-model="uname"/></div>
+<div>{{uname}}</div><!--双花括号的形式可能导致页面出现{{uname}}一闪而过的情况，ng-bind则不会-->
+<script>
+    window.alert("parse");
+</script>
+</body>
+</html>
