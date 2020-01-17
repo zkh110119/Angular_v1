@@ -1,3 +1,5 @@
 /angular_v1.iml
 /node_modules/
 /.idea/
+# 激活idea的自动提示功能
+/AngularJS/

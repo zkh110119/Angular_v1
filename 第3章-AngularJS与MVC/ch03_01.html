@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ch03_01</title>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+</head>
+<body ng-controller="CalcController as calc">
+<div>单价：<input type="number" ng-model="calc.price"/></div>
+<br/>
+<div>数量：<input type="number" ng-model="calc.num"/></div>
+<br/>
+<div>总价:{{calc.totalPrice()}}</div>
+<script type="text/javascript">
+    function CalcController($scope, $log) {
+        $log.log($scope);
+        $log.log(this);
+        $scope.price = 20;
+        $scope.num = 1;
+        $scope.totalPrice = function () {
+            return $scope.price * $scope.num;
+        };
+        this.price = 10;
+        this.num = 1;
+        this.totalPrice = function () {
+            return this.price * this.num;
+        }
+    }
+
+    var app = angular.module('app', []);
+    app.controller('CalcController', CalcController);
+</script>
+</body>
+</html>

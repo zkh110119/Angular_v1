@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>ch03_02</title>
+    <script src="../node_modules/angular/angular.js"></script>
+</head>
+<body>
+<div ng-controller="UserController as user" style="border:#ccc solid 1px;">
+    账号：<input type="text" ng-model="user.name" placeholder="用户名"/>
+    密码：<input type="text" ng-model="user.pword" placeholder="密码"/>
+    <button>提交</button>
+    <p>您输入的账号：{{user.name}}</p>
+    <P>您输入的密码：{{user.pword}}</P>
+</div>
+<div ng-controller="InfoController as info" style="border:#ccc solid 1px;">
+    个人爱好：<input type="text" ng-model="info.love" placeholder="个人爱好"/>
+    <p>您输入的个人爱好：{{info.love}}</p>
+</div>
+<script>
+    function UserController($log) {
+        this.name = "admin";
+        this.pword = "123456";
+        $log.info("UserController->name:" + this.name);
+        $log.info("UserController->pword:" + this.pword);
+    }
+
+    function InfoController($log) {
+        this.love = "足球";
+        $log.info('InfoController->name:' + this.name);
+        $log.info('InfoController->pword:' + this.pword);
+        $log.info('InfoController->love:' + this.love);
+    }
+
+    var app = angular.module('app', []);
+    app.controller('UserController', UserController);
+    app.controller('InfoController', InfoController);
+</script>
+</body>
+</html>
